@@ -3,9 +3,14 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
@@ -30,4 +35,78 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/***********/
+
+:root{
+    --height: 500px;
+    --info_pad: 20px;
+}
+
+
+#square{
+  border: 1px solid black;
+  font-size: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#square:hover{
+  border: 1px solid black;
+  font-size: 40px;
+  background-color: gray;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#board{
+  border: 1px solid green ;
+  width:  500px;
+  height: var(--height);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body{
+    text-align: center;
+}
+
+.GamePlay{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.InfoTab{
+    font-size: 20px;
+    border: 5px solid green ;
+    width:  500px;
+    height: calc(var(--height) - calc(var(--info_pad) * 2));
+    padding: var(--info_pad);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /*justify-content: flex-start;*/    /*  Align Left  */
+    text-align: left;
+    line-height: 200%;
+}
+
+.Scores{
+    /* font-size: calc(10px + 2vmin); */
+    padding-left: 10%;
+    font-size: 30px;
+}
+
+.Score{
+    display: flex;
+    flex-direction: row;
+}
+.Score-Number{
+    font-size: 30px;
+    padding-left: var(--info_pad);
 }
